@@ -1,11 +1,13 @@
 import { AiOutlineUser } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
+import helpdeskLogo from "../../assets/images/helpdesk.png";
 
 export default function Header() {
   return (
     <header className="h-14 bg-primary text-white text-sm px-6 py-8 flex items-center justify-center">
       <div className="container flex justify-between items-center">
-        <div className="brand w-2/10">
+        <div className="brand flex gap-1 w-2/10">
+          <img src={helpdeskLogo} alt="logo" className="w-7" />
           <h1 className="text-xl uppercase font-bold">HelpDesk</h1>
         </div>
 
@@ -13,16 +15,18 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search"
-            className="outline-none ring-0 border-none focus:ring-0 focus:outline-none focus:border-transparent active:border-none"
+            className="outline-none ring-0 border-none focus:ring-0 focus:outline-none focus:border-transparent active:border-none w-full"
           />
           <CiSearch />
         </div>
 
         <div className="user w-2/10 flex gap-2 items-center justify-end text-xs">
-          <span className="userName">Welcome, John</span>
+          <span className="userName">
+            Welcome, <strong>John</strong>
+          </span>
           <div className="bg-accent p-2 rounded-full">
             {/* <img src="#" alt="user profile" /> */}
-            <AiOutlineUser size={20}/>
+            <AiOutlineUser size={20} />
           </div>
         </div>
       </div>
