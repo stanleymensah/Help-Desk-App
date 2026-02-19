@@ -14,7 +14,7 @@ export default function Footer() {
         </span>
 
         <div className="others">
-          <span className="text-sm">&copy; {new Date().getFullYear()} HelpDesk &bull; v1.2.0</span>
+          <span className="text-sm">Copyright &copy; HelpDesk {new Date().getFullYear()} &bull; v1.2.0</span>
         </div>
       </div>
     </footer>

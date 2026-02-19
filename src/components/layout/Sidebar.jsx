@@ -11,14 +11,23 @@ export default function Sidebar() {
             <Dropdown          
             icon={<TbLayoutDashboard size={16} />}
               name="Dashboard"
-              items={["Profile", "Settings", "Logout"]}
-            />{" "}
+              activePath="/"
+              items={[
+                {label: "Overview", path: "/"},
+                {label: "Profile", path:"/profile"},
+                {label: "Settings", path: "/settings"}
+              ]}
+            />
 
           {/* NORMAL */}
           <Dropdown
           icon={<LuTickets />}
           name="Tickets"
-          items={["Account", "Logout"]}
+          activePath="/tickets"
+          items={[
+            {label: "All Tickets", path: "/tickets"},
+            {label: "Create New", path: "/tickets/new"}
+          ]}
           />
 
 
