@@ -1,0 +1,42 @@
+import { useState } from "react";
+import { HiMiniChevronDown } from "react-icons/hi2";
+
+const Dropdown = ({ name, items, icon }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <div
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+        className="navItem px-4 py-2.5 flex items-center justify-between gap-2 text-sm text-primary rounded cursor-pointer transition-colors aria-expanded:bg-primary aria-expanded:text-white"
+      >
+        <span className="flex items-center gap-2">
+          {icon}
+          {name}
+        </span>
+        <HiMiniChevronDown
+          size={16}
+          className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+        />
+      </div>
+
+      {isOpen && (
+        <div className="bg-white border-x border-b border-gray-200 rounded-b overflow-hidden">
+          <ul>
+            {items.map((item, index) => (
+              <li
+                key={index}
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer border-b last:border-b-0 border-gray-100"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Dropdown;

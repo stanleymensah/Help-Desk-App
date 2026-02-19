@@ -45,7 +45,7 @@ export default function TicketsPage() {
 
         <div className="flex flex-col gap-3 text-xs">
           {/* TICKET CARD ---- IN PROGESS */}
-          <div className="card flex items-center gap-4 border border-gray-200 rounded-lg py-3 px-5 hover:shadow-md transition-shadow">
+          <div className="card flex items-center gap-4 border border-primary rounded-lg py-3 px-5 hover:shadow-md transition-shadow">
             {/* ID - Small fixed width */}
             <div className="w-16 flex-shrink-0">
               <span className="font-semibold text-gray-700">#1022</span>
@@ -94,7 +94,7 @@ export default function TicketsPage() {
           </div>
 
           {/* TICKET CARD ---- RESOLVED */}
-          <div className="card flex items-center gap-4 border border-gray-200 rounded-lg py-3 px-5 hover:shadow-md transition-shadow">
+          <div className="card flex items-center gap-4 border border-primary rounded-lg py-3 px-5 hover:shadow-md transition-shadow">
             {/* ID - Small fixed width */}
             <div className="w-16 flex-shrink-0">
               <span className=" font-semibold text-gray-700">#1023</span>
@@ -142,7 +142,7 @@ export default function TicketsPage() {
           </div>
 
           {/* TICKET CARD ---- OPEN  */}
-          <div className="card flex items-center gap-4 border border-gray-200 rounded-lg py-3 px-5 hover:shadow-md transition-shadow">
+          <div className="card flex items-center gap-4 border border-primary rounded-lg py-3 px-5 hover:shadow-md transition-shadow">
             {/* ID - Small fixed width */}
             <div className="w-16 flex-shrink-0">
               <span className=" font-semibold text-gray-700">#1024</span>
