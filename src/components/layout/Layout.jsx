@@ -12,7 +12,7 @@ export default function Layout() {
           <Sidebar />
         </div>
 
-        <div className="right w-8/10 p-3">
+        <div className="right w-8/10 p-3 bg-dim">
             <Outlet />
         </div>
       </main>

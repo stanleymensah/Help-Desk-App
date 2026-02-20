@@ -2,12 +2,15 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMiniChevronDown } from "react-icons/hi2";
 
-const Dropdown = ({ name, items, icon, activePath }) => {
+const Dropdown = ({ name, items, icon, }) => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
   // Check if current page matches this dropdown's section
-  const isActive = location.pathname.startsWith(activePath);
+  const isActive = items.some(item =>
+  location.pathname === item.path ||
+  location.pathname.startsWith(item.path + "/")
+);
 
   return (
     <div>
