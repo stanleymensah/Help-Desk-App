@@ -5,12 +5,12 @@ import Layout from "../components/layout/Layout";
 import CreateTicketPage from "../pages/tickets/CreateTicketPage";
 import Settings from "../pages/settings/Settings";
 import Profile from "../pages/profile/Profile";
-import Login from "../pages/auth/Login";
+import Auth from "../pages/auth/Auth";
 
 export const router = createBrowserRouter([
   {
-    path: "/login",
-    element: <Login />,
+    path: "/auth",
+    element: <Auth />,
   },
   {
     element: <Layout />,
