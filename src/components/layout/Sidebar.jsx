@@ -5,7 +5,7 @@ import { LuTickets } from "react-icons/lu";
 export default function Sidebar() {
   return (
     <>
-      <div className="sidebar border-e border-e-primary w-full h-full p-2 bg-dim">
+      <div className="sidebar border-e border-e-primary h-full p-2 bg-dim">
         <div className="container p-2 flex flex-col gap-3">
           {/* SELECTED */}
             <Dropdown          

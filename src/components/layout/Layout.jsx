@@ -8,11 +8,11 @@ export default function Layout() {
     <>
       <Header />
       <main className="flex h-lvh">
-        <div className="left w-2/10">
+        <div className="left w-15/100">
           <Sidebar />
         </div>
 
-        <div className="right w-8/10 p-3 bg-dim">
+        <div className="right w-85/100 p-3 bg-dim">
             <Outlet />
         </div>
       </main>
