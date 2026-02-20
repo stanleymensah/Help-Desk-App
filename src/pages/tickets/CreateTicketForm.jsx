@@ -1,115 +1,109 @@
 import { PrimaryButton, SecondaryButton } from "../../components/common/Button";
 import { useForm } from "react-hook-form";
-
-
+import Input from "../../components/common/InputField";
+import Textarea from "../../components/common/Textarea";
+import Select from "../../components/common/Select";
 
 export default function CreateTicketForm() {
-    const {
+  const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const priorityOptions = [
+    { value: "low", label: "Low" },
+    { value: "medium", label: "Medium" },
+    { value: "high", label: "High" },
+    { value: "critical", label: "Critical" },
+  ];
 
   const onSubmit = (data) => {
     console.log("Created Form: ", data);
   };
   return (
     <>
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
-              <div className="flex gap-2 w-full">
-                <div className="flex flex-col gap-2 w-1/2">
-                  <label>Ticket title</label>
-                  <input
-                    {...register("ticketTitle", {
-                      required: "Title is required",
-                      minLength: {
-                        value: 5,
-                        message: "Should be more than 5 characters",
-                      },
-                    })}
-                    type="text"
-                    placeholder="Title"
-                    className="border p-2 mb-4 focus:outline-none focus:border-primary"
-                  />
-                  {errors.ticketTitle && (
-                    <span className="text-red-500">
-                      {errors.ticketTitle?.message}
-                    </span>
-                  )}
-                </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
+        <div className="flex gap-2 w-full">
+          <div className="flex flex-col gap-2 w-1/2">
+            <Input
+              label="Ticket Title"
+              name="ticketTitle"
+              type="text"
+              placeholder="Title"
+              register={register}
+              error={errors.ticketTitle}
+              required
+              validation={{
+                required: "Title is required",
+                minLength: {
+                  value: 5,
+                  message: "Should be more than 5 characters",
+                },
+              }}
+            />
+          </div>
 
-                <div className="flex flex-col gap-2 w-1/2">
-                  <label>User email</label>
-                  <input
-                    {...register("userEmail", {
-                      required: "Email is required",
-                      minLength: {
-                        value: 5,
-                        message: "Should be more than 5 characters",
-                      },
-                    })}
-                    type="text"
-                    placeholder="Email"
-                    className="border p-2 mb-4 focus:outline-none focus:border-primary"
-                  />
-                  {errors.userEmail && (
-                    <span className="text-red-500">
-                      {errors.userEmail?.message}
-                    </span>
-                  )}
-                </div>
-    
-                
-              </div>
+          <div className="flex flex-col gap-2 w-1/2">
+            <Input
+              label="User Email"
+              name="userEmail"
+              type="text"
+              placeholder="Email"
+              register={register}
+              error={errors.ticketTitle}
+              required
+              validation={{
+                required: "Email is required",
+                minLength: {
+                  value: 5,
+                  message: "Should be more than 5 characters",
+                },
+              }}
+            />
+          </div>
+        </div>
 
-              <div className="my-2">
-                <div className="flex flex-col gap-2 w-1/2">
-                  <label>Ticket priority</label>
-                  <select
-                    name="priority"
-                    className="border p-2 focus:outline-none focus:border-primary"
-                    {...register("ticketPriority", {
-                      required: "Select a priority",
-                    })}
-                  >
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                  </select>
-                </div>
-    
-                {errors.ticketPriority && (
-                  <span className="text-red-500">
-                    {errors.ticketPriority?.message}
-                  </span>
-                )}
-              </div>
-    
-              <div className="flex flex-col gap-2">
-                <label>Ticket description</label>
-                <textarea
-                  {...register("ticketDescription", {
-                    required: "Description required!",
-                    minLength: {
-                      value: 10,
-                      message: "Must not be less than 10 characters",
-                    },
-                  })}
-                  placeholder="Description"
-                  className="border focus:outline-none focus:border-primary w-full p-2 h-40 line-clamp-1"
-                ></textarea>
-                {errors.ticketDescription && (
-                  <span className="text-red-500">
-                    {errors.ticketDescription?.message}
-                  </span>
-                )}
-              </div>
-    
-              <div className="buttons flex justify-end p-4 gap-3">
-                <SecondaryButton name="Cancel" />
-                <PrimaryButton name="Create" type="submit" />
-              </div>
-            </form>
+        <div className="my-2">
+          <div className="flex flex-col gap-2 w-1/2">
+            <Select
+              label="Ticket Priority"
+              name="ticketPriority"
+              options={priorityOptions}
+              register={register}
+              error={errors.ticketPriority}
+              required
+              placeholder="Select priority level"
+              validation={{
+                required: "Select a Priority",
+              }}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Textarea
+            label="Ticket description"
+            name="ticketDescription"
+            placeholder="Description"
+            register={register}
+            error={errors.ticketDescription}
+            required
+            validation={{
+              required: "Description is required",
+              minLength: {
+                value: 10,
+                message: "Must not be less than 10 characters",
+              },
+            }}
+          />
+        </div>
+
+        <div className="buttons flex justify-end p-4 gap-3">
+          <SecondaryButton name="Cancel" />
+          <PrimaryButton name="Create" type="submit" />
+        </div>
+      </form>
     </>
-  )
+  );
 }
