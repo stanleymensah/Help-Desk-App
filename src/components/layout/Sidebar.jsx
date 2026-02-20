@@ -1,5 +1,5 @@
 import Dropdown from "../common/Dropdown";
-import { TbLayoutDashboard } from "react-icons/tb";
+import { RxDashboard } from "react-icons/rx";
 import { LuTickets } from "react-icons/lu";
 
 export default function Sidebar() {
@@ -9,7 +9,7 @@ export default function Sidebar() {
         <div className="container p-2 flex flex-col gap-3">
           {/* SELECTED */}
             <Dropdown          
-            icon={<TbLayoutDashboard size={16} />}
+            icon={<RxDashboard size={16} />}
               name="Dashboard"
               items={[
                 {label: "Overview", path: "/"},

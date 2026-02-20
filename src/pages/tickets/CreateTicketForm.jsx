@@ -37,7 +37,32 @@ export default function CreateTicketForm() {
                     </span>
                   )}
                 </div>
+
+                <div className="flex flex-col gap-2 w-1/2">
+                  <label>User email</label>
+                  <input
+                    {...register("userEmail", {
+                      required: "Email is required",
+                      minLength: {
+                        value: 5,
+                        message: "Should be more than 5 characters",
+                      },
+                    })}
+                    type="text"
+                    placeholder="Email"
+                    className="border p-2 mb-4 focus:outline-none focus:border-primary"
+                  />
+                  {errors.userEmail && (
+                    <span className="text-red-500">
+                      {errors.userEmail?.message}
+                    </span>
+                  )}
+                </div>
     
+                
+              </div>
+
+              <div className="my-2">
                 <div className="flex flex-col gap-2 w-1/2">
                   <label>Ticket priority</label>
                   <select
