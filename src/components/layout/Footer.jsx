@@ -1,4 +1,4 @@
-import helpdeskLogo from "../../assets/images/helpdesk.png";
+import helpdeskLogo from "../../assets/icons/helpdesk.png";
 
 export default function Footer() {
   return (

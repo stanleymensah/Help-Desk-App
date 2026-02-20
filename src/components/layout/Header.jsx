@@ -1,6 +1,6 @@
 import { AiOutlineUser } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
-import helpdeskLogo from "../../assets/images/helpdesk.png";
+import helpdeskLogo from "../../assets/icons/helpdesk.png";
 
 export default function Header() {
   return (
