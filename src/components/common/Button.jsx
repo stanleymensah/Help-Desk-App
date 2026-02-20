@@ -1,25 +1,24 @@
-
-export const SecondaryButton = () => {
+export const PrimaryButton = ({ name, type }) => {
   return (
     <>
       <button
-        type="button"
-        className="text-xs bg-secondary text-white py-3 px-3 rounded-md m-1"
+        type={type}
+        className="text-xs bg-primary text-white py-3 px-3 rounded-md m-1 cursor-pointer"
       >
-        Secondary Button
+        {name}
       </button>
     </>
   );
 };
 
-export const PrimaryButton = () => {
+export const SecondaryButton = ({ name , type}) => {
   return (
     <>
       <button
-        type="button"
-        className="text-xs bg-tranparent text-secondary py-3 px-3 rounded-md m-1 border border-secondary"
+        type={type}
+        className="text-xs bg-tranparent text-secondary py-3 px-3 rounded-md m-1 border border-secondary cursor-pointer"
       >
-        Secondary Button
+        {name}
       </button>
     </>
   );
